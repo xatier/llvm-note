@@ -5,7 +5,8 @@ the following scripts
 
     # number of processors
     NP="8"
-    
+
+    PKGNAME="llvm-3.2"
     # fetch the tarball
     wget http://llvm.org/releases/3.2/$PKGNAME.src.tar.gz
     tar zxvf $PKGNAME.src.tar.gz
