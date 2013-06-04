@@ -31,7 +31,7 @@ after everything done, then you can see
       Built Jun  4 2013 (15:29:06).
       Default target: x86_64-unknown-linux-gnu
       Host CPU: corei7
-    
+      
       Registered Targets:
         arm      - ARM
         cellspu  - STI CBEA Cell SPU [experimental]
@@ -54,3 +54,28 @@ after everything done, then you can see
         x86-64   - 64-bit X86: EM64T and AMD64
         xcore    - XCore
     
+
+compile with less targets
+
+    ./configure --enable-optimized --enable-cxx11 --enable-jit --enable-targets=x86,x86_64,arm,mips,cpp --prefix=`pwd`/build
+
+
+    ./build/bin/llc --version
+    LLVM (http://llvm.org/):
+      LLVM version 3.2svn
+      Optimized build with assertions.
+      Built Jun  4 2013 (16:41:53).
+      Default target: x86_64-unknown-linux-gnu
+      Host CPU: corei7
+      
+      Registered Targets:
+        arm      - ARM
+        cpp      - C++ backend
+        mips     - Mips
+        mips64   - Mips64 [experimental]
+        mips64el - Mips64el [experimental]
+        mipsel   - Mipsel
+        thumb    - Thumb
+        x86      - 32-bit X86: Pentium-Pro and above
+        x86-64   - 64-bit X86: EM64T and AMD64
+
