@@ -8,30 +8,36 @@ more Information and Reference: The Official LLVM documentation [Writing An LLVM
 
 we need `-fPIC` to compile an shared library
 
-We don\'t need `-fno-rtti` [RTTI](http://en.wikipedia.org/wiki/Run-time_type_information)
+We don't need `-fno-rtti` [RTTI](http://en.wikipedia.org/wiki/Run-time_type_information)
 
-RTTI: We can\'t use  `typeid` and `dynamic_cast` without it
+RTTI: We can't use  `typeid` and `dynamic_cast` without it
 
 ### code details ###
 
 
 - debug
 
-`#define DEBUG_TYPE "mypass"` is used for the `-debug` option
+`#define DEBUG_TYPE "mypass"`
+
+this is used for the `-debug` `-debug-only=xxx` options
 
 [see](http://llvm.org/docs/ProgrammersManual.html#fine-grained-debug-info-with-debug-type-and-the-debug-only-option)
 
 
+----
 
 - statistic
 
-`STATISTIC(myPassCounter, "my pass");` we can defind counters for our pass for `-stats` option
+`STATISTIC(myPassCounter, "my pass");`
+
+we can defind counters for our pass for `-stats` option
 
 then we `++myPassCounter;` in our transformations
 
 [see](http://llvm.org/docs/ProgrammersManual.html#the-statistic-class-stats-option)
 
 
+----
 
 - write a function pass
 
@@ -56,10 +62,11 @@ we inherit from the class `FunctionPass` and print out the function name when we
 [see](http://llvm.org/docs/doxygen/html/classllvm_1_1FunctionPass.html)
 
 
+----
 
 - loop pass
 
- `BasicBlockPass`
+`BasicBlockPass`
 
     virtual bool doInitialization(Function &F)
     virtual bool runOnBasicBlock(BasicBlock &BB)
@@ -67,15 +74,16 @@ we inherit from the class `FunctionPass` and print out the function name when we
 
 the steps here are prepare-transform-cleanup
 
-doInitialization - Virtual method overridden by BasicBlockPass subclasses to do any necessary per-function initialization.
+1. doInitialization - Virtual method overridden by BasicBlockPass subclasses to do any necessary per-function initialization.
 
-runOnBasicBlock - Virtual method overriden by subclasses to do the per-basicblock processing of the pass.
+2. runOnBasicBlock - Virtual method overriden by subclasses to do the per-basicblock processing of the pass.
 
-doFinalization - Virtual method overriden by BasicBlockPass subclasses to do any post processing needed after all passes have run.
+3. doFinalization - Virtual method overriden by BasicBlockPass subclasses to do any post processing needed after all passes have run.
 
 [see](http://llvm.org/docs/doxygen/html/classllvm_1_1BasicBlockPass.html)
 
 
+----
 
 - iterating a Function
 
@@ -89,10 +97,11 @@ we can use `Function::iterator` to iterator all basic blocks in a function
 [see](http://llvm.org/docs/ProgrammersManual.html#iterating-over-the-basicblock-in-a-function)
 
 
+----
 
 - iterating a Function
 
-    likewise, we can use the similar `BasicBlock::iterator` to iterator over a basicblock
+likewise, we can use the similar `BasicBlock::iterator` to iterator over a basicblock
 
     for (BasicBlock::iterator i = BB.begin(), e = BB.end(); i != e; ++i) {
       errs() << "--> " << *i << "\n";
