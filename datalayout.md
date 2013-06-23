@@ -36,6 +36,8 @@ the terms are seperated by `-`, and it means
 
 
 ## Reference ##
+
 [LLVM type system](http://llvm.org/docs/LangRef.html#type-system)
+
 [LLVM data-layout](http://llvm.org/docs/LangRef.html#data-layout)
 
