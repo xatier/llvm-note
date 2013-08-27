@@ -27,7 +27,7 @@ the modular LLVM optimizer and analyzer
     `opt -load mypasslib.so -mypass ./test.ll -S -o out.ll`
 
 
-- see all passed
+- see all passes
 
     `opt -help | less`
 
