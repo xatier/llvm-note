@@ -6,9 +6,9 @@ the following scripts
     # number of processors
     NP="8"
 
-    PKGNAME="llvm-3.2"
+    PKGNAME="llvm-3.3"
     # fetch the tarball
-    wget http://llvm.org/releases/3.2/$PKGNAME.src.tar.gz
+    wget http://llvm.org/releases/3.3/$PKGNAME.src.tar.gz
     tar zxvf $PKGNAME.src.tar.gz
     
     # we need absolute path
