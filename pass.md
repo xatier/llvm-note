@@ -80,6 +80,8 @@ the steps here are prepare-transform-cleanup
 
 3. doFinalization - Virtual method overriden by BasicBlockPass subclasses to do any post processing needed after all passes have run.
 
+## Tom: don't write loop passes
+
 [see](http://llvm.org/docs/doxygen/html/classllvm_1_1BasicBlockPass.html)
 
 
