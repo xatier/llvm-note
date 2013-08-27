@@ -1,6 +1,16 @@
 Data layout
 ========
 
+in file `lib/IR/DataLayout.cpp`
+
+old name: `target data` the name changed during 3.1 -> 3.2
+
+since trunk@165401 (Mon Oct 8 16:37:04 2012 +0000)
+
+but some variable names are still `TD`
+
+----
+
 in the very beginging of an LLVM assembly code (.ll files), we can see the definition of the machine datalayout of the target code
 
 ## For instance ##
