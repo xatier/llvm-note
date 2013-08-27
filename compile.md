@@ -1,7 +1,13 @@
 ## compiling llvm ##
 
+llvm can be compiled by both autoconf tools and cmake
 
-the following scripts
+for cmake notes, see `cmake.md`
+
+----
+
+
+### use the following scripts
 
     # number of processors
     NP="8"
@@ -23,7 +29,7 @@ the following scripts
 
 
 
-after everything done, then you can see
+### after everything done, then you can see
 
     ./build/bin/llc --version
     LLVM (http://llvm.org/):
@@ -56,7 +62,7 @@ after everything done, then you can see
         xcore    - XCore
     
 
-compile with less targets
+### compile with less targets
 
     ./configure --enable-optimized --enable-cxx11 --enable-jit --enable-targets=x86,x86_64,arm,mips,cpp --prefix=`pwd`/build
 
