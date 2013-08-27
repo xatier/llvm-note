@@ -42,9 +42,9 @@ terms
 ### block iterator
 
     // check for other basicblocks                                              
-    for (Loop::block_iterator i = outer->block_begin(),                         
-         e = outer->block_end(); i != e; ++i) {                                 
-        DEBUG_MSG("looking at" << *static_cast<BasicBlock *>(*i) << "\n"); 
+    for (Loop::block_iterator i = L->block_begin(),
+         e = L->block_end(); i != e; ++i) {
+        DEBUG_MSG("looking at" << *static_cast<BasicBlock *>(*i) << "\n");
     }
 
 
